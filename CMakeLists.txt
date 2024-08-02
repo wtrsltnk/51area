@@ -4,7 +4,7 @@ project(51Area)
 
 find_package(OpenGL REQUIRED)
 
-set(SRC_APP
+add_executable(51Area WIN32
     Area.cpp
     GraphicsEngine.cpp
     GraphicsEngine.h
@@ -15,14 +15,8 @@ set(SRC_APP
     resource.h
     scrnsvr.rc
     Settings.cpp
-    )
-
-add_executable(51Area WIN32
-    ${SRC_APP}
 	)
 
-find_file(SCRNSAVE scrnsave)
-message(${SCRNSAVE})
 target_link_libraries(51Area
     ${OPENGL_LIBRARIES}
     scrnsave
